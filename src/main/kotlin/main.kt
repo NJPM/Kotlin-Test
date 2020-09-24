@@ -1,5 +1,5 @@
-class Employee(val firstName: String, val lastName: String, val yearsWorked: Int) {
-    var fullName = "$firstName $lastName"
+data class Employee(val firstName: String, val lastName: String, val yearsWorked: Int) {
+    var fullName = "$firstName $lastName"                   // Data class keep equals/hashCode and toString (e.g. "Employee(firstName="Bob",...
     init {                                                  // Class example. Init will run when an instance is created.
         if (yearsWorked > 1) {
             println("$fullName is eligible for a raise!")
