@@ -1,3 +1,22 @@
+class Employee(val firstName: String, val lastName: String, val yearsWorked: Int) {
+    var fullName = "$firstName $lastName"
+    init {                                                  // Class example. Init will run when an instance is created.
+        if (yearsWorked > 1) {
+            println("$fullName is eligible for a raise!")
+        } else {
+            println("$fullName is not eligible for a raise just yet.")
+        }
+    }
+    fun job(task: String) {
+        println("It is ${fullName}'s job to do $task.")
+    }
+}
+
+fun ozToTsp(oz: Double): Double {                           // Function example
+    var tsp = oz*6
+    return tsp
+}
+
 fun main() {
     println("Hello World!")
 
@@ -28,4 +47,14 @@ fun main() {
     for ((taskIndex, task) in myTasks.withIndex()) {
         println("$taskIndex: $task")
     }
+
+    var tspNeeded = ozToTsp(.75)                            // Call function
+    println("You will need $tspNeeded tsp of vanilla extract for this recipe.")
+
+    var perimeter = {side1: Int, side2: Int -> 2*(side1 + side2)}   // Lambda function syntax
+    println(perimeter(2,4))
+
+    var theBoss = Employee("Maxie", "Jones", 15)
+    theBoss.job("everything")
+
 }
